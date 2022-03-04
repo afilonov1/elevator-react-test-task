@@ -1,71 +1,24 @@
-# Getting Started with Create React App
+Тестовое задание для вакансии «Frontend разработчик»
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+«Эмулятор лифта»
 
-## Available Scripts
+Требуется разработать одностраничное приложение (SPA), эмулирующее работу лифтовой системы.
 
-In the project directory, you can run:
+Приложение должно состоять из схемы нескольких этажей с нумерацией и кнопками вызова, а также из самой шахты лифта с кабиной.
 
-### `npm start`
+Количество этажей по умолчанию: 5
+Количество шахт лифта по умолчанию: 1
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+По умолчанию лифт находится на 1 этаже в состоянии покоя (свободен).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+При нажатии на кнопку вызова лифт должен обработать этот вызов в соответствии со следующими сценариями:
+1.    Если вызов осуществляется с этажа, на котором лифта нет – свободный лифт начинает движение к выбранному этажу со скоростью 1 этаж в секунду. 
+Достигнув нужного этажа лифт 3 секунды «отдыхает» - индикацию этого состояния можно реализовать с помощью мигания.
+После этого лифт снова переходит в состояние покоя и готов обработать следующий вызов.
+2.    Если в момент движения лифта осуществить вызов на другой этаж – этот вызов должен добавиться в очередь вызовов.
+Вызовы должны обрабатываться последовательно.
+3.    Вызов пропускается в случаях, если:
+- лифт уже находится на выбранном этаже в состоянии покоя
+- лифт уже находится в процессе обработки такого вызова (находится в движении к выбранному этажу)
+- в очереди вызовов уже есть выбранный этаж
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# elevator-react-test-task
